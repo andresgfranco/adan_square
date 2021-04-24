@@ -12,3 +12,6 @@ for instances in range(team_members):
     #team members accordin to the number
     member_name = input(f"What is team member #{instances} name?")
     members_results_dict = [member_name.format(instances)] = companies(member_name)
+
+
+#after above loop we should compute the results and give an ordered list of the companies names we should apply for
