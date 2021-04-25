@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Module to create a file rating_companies.csv """
 import csv
-from  os import path
+from os import path
 
 my_input = int(input("Select 1 - Add your Rating of all companies\n"
                      "Select 2 - See the Average of rating all companies: "))
