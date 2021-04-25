@@ -11,24 +11,23 @@ class Company():
     def __init__(self, member_name):
         """Instances attributes that will determine the result of each company according to the
         member in case"""
-        comp_list = {"Immigo": None, "Bomberbot": None, "Valienta": None,
+        self.comp_list = {"Immigo": None, "Bomberbot": None, "Valienta": None,
                      "Microsoft": None, "Mowies": None, "Torre_crawling": None,
                      "Atomchat": None, "Techstars": None, "Bankity": None,
                      "Code_inspector": None, "Torre_talent": None,
                      "Porter_Metrics": None,"Social_atom": None}
         self.member = member_name
-        for a, b in comp_list.items():
+        for a, b in self.comp_list.items():
             result = self.input_voting(a, self.member)
-            comp_list[a] = result
+            self.comp_list[a] = result
             self.a = a
             print("Result for", self.a + ":", end="")
             sys.stdout.write(BLUE)
-            print(f" {comp_list[a]}")
+            print(f" {self.comp_list[a]}")
             sys.stdout.write(RESET)
         # Here it should return a list of the results in order but the idea is to return
         # the list of the names not just the number of the results
-        # print("--------------------")
-        return
+        print("--------------------")
 
     def input_voting(self, company, member_name):
         """Function used when instance is created to receive voting inputs per company per team member"""
@@ -53,11 +52,9 @@ class Company():
             res += feat_list[a]
         return res / 4
 
-    def comp_grade(self, company):
-        """ Returns the grade for every company"""
-        return comp_list[company]
 
 
-Adrian = Company("Adrian")
-Gonzales = Company("Gonzales")
-Campo = Company("Campo")
+#Adrian = Company("Adrian")
+#print(Adrian.comp_list)
+#Gonzales = Company("Gonzales")
+#Campo = Company("Campo")
