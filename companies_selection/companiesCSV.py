@@ -13,7 +13,6 @@ my_companies = ["Bankity", "Bomberbot", "Valienta", "Torre Crawling", "Immigo",
 def save_to_file_csv(my_companies):
     """ Function to create the rating of the company with your name and your
     rating """
-
     filename = "rating_companies.csv"
     my_dict = []
     my_list = []
@@ -23,7 +22,7 @@ def save_to_file_csv(my_companies):
     print()
     rating_dict["Name"] = input("Enter Your Name: ")
 
-    for companie in my_companies[:2]:
+    for companie in my_companies:
         print("The company is {}".format(companie))
         rating_dict["Companie"] = companie
         my_sum = 0
@@ -32,7 +31,6 @@ def save_to_file_csv(my_companies):
             rating_dict[column] = int(input(f"{column} = vote from 1-5 how is {companie} for you? "))
             my_sum = my_sum + rating_dict[column]
         rating_dict["Promedy"] = float(my_sum / 4)
-        print(rating_dict["Promedy"])
         my_dict.append(rating_dict.copy())
         my_list.append([rating_dict["Name"], rating_dict["Companie"], rating_dict["Culture"],
                        rating_dict["Tech Stack"], rating_dict["Product"],
@@ -64,15 +62,15 @@ def promedy(my_companies):
             reader = csv.DictReader(File)
             for row in reader:
                 company = row["Companie"]
-                print(f"Name = {row['Name']}, Company = {row['Companie']}, Promedy = {row['Promedy']}")
                 if temp_name == "" or temp_name != row["Name"]:
                     temp_name =  row["Name"]
                     count = count + 1
+                    print()
+                print(f"Name = {row['Name']}, Company = {row['Companie']}, Promedy = {row['Promedy']}")
                 if company in my_dict:
                     my_dict[company] = my_dict.get(company, 0 ) + float(row['Promedy'])
                 else:
                     my_dict[company] = float(row['Promedy'])
-
         print()
         for companie, promedy in my_dict.items():
             print(f"This is the promedy between {count} integrants")
