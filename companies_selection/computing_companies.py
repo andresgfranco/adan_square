@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module to create function computing"""
-from companies import companies
+#from companies import Companies
 
 
 team_members = int(input("How many team members do you have?"))
@@ -11,7 +11,7 @@ for instances in range(team_members):
     #that's why I suggested a loop here, at the end we should have the results of the
     #team members accordin to the number
     member_name = input(f"What is team member #{instances} name?")
-    members_results_dict = [member_name.format(instances)] = companies(member_name)
+    #members_results_dict = [member_name.format(instances)] = Companies(member_name)
 
 
 #after above loop we should compute the results and give an ordered list of the companies names we should apply for
